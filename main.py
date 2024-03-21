@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem
+from PySide6.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem
 
 
 class ScheduleWindow(QMainWindow):
@@ -8,7 +8,6 @@ class ScheduleWindow(QMainWindow):
         self.setWindowTitle("Расписание")
         self.setGeometry(100, 100, 500, 500)
 
-        # Создание таблицы расписания
         self.schedule_table = QTableWidget(self)
         self.schedule_table.setGeometry(10, 10, 500, 500)
         self.schedule_table.setColumnCount(2)
@@ -16,7 +15,6 @@ class ScheduleWindow(QMainWindow):
         self.schedule_table.setHorizontalHeaderLabels(['Группа 1', 'Группа 2'])
         self.schedule_table.setVerticalHeaderLabels(['Понедельник','','','', 'Среда','','', 'Пятница','','',''])
 
-        # Заполнение таблицы расписания
         self.schedule_table.setItem(0, 0, QTableWidgetItem('Теория алгоритмов'))
         self.schedule_table.setItem(0, 1, QTableWidgetItem('Теория вероятности'))
         self.schedule_table.setItem(1, 0, QTableWidgetItem('Теория алгоритмов'))

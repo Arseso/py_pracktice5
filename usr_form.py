@@ -1,10 +1,9 @@
-from PyQt5.QtWidgets import QApplication, QLabel, QLineEdit, QPushButton, QCheckBox, QComboBox, QGridLayout, QWidget
+from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QPushButton, QCheckBox, QComboBox, QGridLayout, QWidget
 
 class AccountForm(QWidget):
     def __init__(self):
         super().__init__()
 
-        # Создание виджетов
         self.label_fio = QLabel('ФИО:')
         self.label_email = QLabel('Почта:')
         self.label_phone = QLabel('Телефон:')
@@ -17,11 +16,9 @@ class AccountForm(QWidget):
         self.combo_box_topics = QComboBox()
         self.combo_box_topics.addItems(['Тема 1', 'Тема 2', 'Тема 3', 'Тема 4'])
 
-        # Создание кнопок
         self.button_check_input = QPushButton('Проверить ввод')
         self.button_check_input.clicked.connect(self.check_input)
 
-        # Создание сетки для размещения виджетов
         grid = QGridLayout()
         grid.addWidget(self.label_fio, 0, 0)
         grid.addWidget(self.line_edit_fio, 0, 1)
@@ -35,11 +32,9 @@ class AccountForm(QWidget):
         grid.addWidget(self.check_box_newsletter, 5, 0, 1, 2)
         grid.addWidget(self.button_check_input, 6, 0, 1, 2)
 
-        # Установка сетки на форму
         self.setLayout(grid)
 
     def check_input(self):
-        # валидация введенных данных
         fio = self.line_edit_fio.text()
         email = self.line_edit_email.text()
         phone = self.line_edit_phone.text()
