@@ -2,7 +2,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QTabWidget
 from usr_form import AccountForm
 from main import ScheduleWindow
-from dynamic_obj import DraggableWidget
+from dynamic_obj import Window as DraggableWidget
 
 class MainApp(QMainWindow):
     def __init__(self):
