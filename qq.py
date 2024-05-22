@@ -2,7 +2,8 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QTabWidget
 from usr_form import AccountForm
 from main import ScheduleWindow
-from dynamic_obj import Window as DraggableWidget
+from dynamic_obj import interface as DraggableWidget
+
 
 class MainApp(QMainWindow):
     def __init__(self):
@@ -23,11 +24,13 @@ class MainApp(QMainWindow):
         self.tab_draggable = DraggableWidget()
         self.tab_widget.addTab(self.tab_draggable, "Draggable Widget")
 
+
 def run_app():
     app = QApplication(sys.argv)
     main_app = MainApp()
     main_app.show()
     sys.exit(app.exec())
+
 
 if __name__ == "__main__":
     run_app()
